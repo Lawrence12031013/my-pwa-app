@@ -1,0 +1,9 @@
+.header-bcg {
+    background-color: #3399DB;
+    padding: 0.5rem 0 ;
+}
+
+.header-bcg i {
+    color: #fff;
+    font-size: 25px;
+}

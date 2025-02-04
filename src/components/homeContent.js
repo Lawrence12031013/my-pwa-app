@@ -1,9 +1,15 @@
 import React from 'react'
+import '../assets/styles/page.css'
+import { MoodContent } from './moodContent'
 
-export const HomeContent = () => { 
-  return (
+export const HomeContent = () => {
+   
+    return(
     <div>
-      <h1 className='text-red-500 text-2xl'>This is Homepage!</h1>
+      <div className='month-year-bcg text-center'>
+        <p className='month-year'>February 2025</p>
+      </div>
+      <MoodContent />
     </div>
   )
 }

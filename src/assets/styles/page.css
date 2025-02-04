@@ -1,0 +1,27 @@
+.month-year-bcg {
+    background-color: #EFEEF3;
+    padding: 0.1rem 0;
+}
+
+.month-year {
+    color: #3399DB;
+}
+
+.content-height {
+    height: 55px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+hr {
+    color: #d2d1d6;
+}
+
+.date-content {
+    width: 55px;
+}
+
+.mood-content {
+    height: calc(100vh - 75px);
+    overflow-y: scroll;
+}
