@@ -6,9 +6,6 @@ export const HomeContent = () => {
    
     return(
     <div>
-      <div className='month-year-bcg text-center'>
-        <p className='month-year'>February 2025</p>
-      </div>
       <MoodContent />
     </div>
   )

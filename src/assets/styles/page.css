@@ -24,4 +24,5 @@ hr {
 .mood-content {
     height: calc(100vh - 75px);
     overflow-y: scroll;
+    position: relative;
 }

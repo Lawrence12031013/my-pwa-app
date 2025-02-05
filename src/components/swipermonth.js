@@ -25,7 +25,7 @@ const SwipeCalendar = () => {
   const handleTouchMove = (e) => {
     const moveX = e.touches[0].clientX;
 
-    if (startX - moveX > 80 && !swipeHandledRef.current) {
+    if (moveX - startX > 50 && !swipeHandledRef.current) {
         // 向左滑動（下一個月）
         swipeHandledRef.current = true
         setCurrentDate(({ year, month }) => {
@@ -33,7 +33,7 @@ const SwipeCalendar = () => {
           const newYear = newMonth === 0 ? year + 1 : year;
           return { year: newYear, month: newMonth };
         });
-      } else if (moveX - startX > 80 && !swipeHandledRef.current) {
+      } else if ( startX - moveX > 50 && !swipeHandledRef.current) {
         // 向右滑動（上一個月）
         swipeHandledRef.current = true
         setCurrentDate(({ year, month }) => {
@@ -45,12 +45,14 @@ const SwipeCalendar = () => {
   };
 
   return (
-    <div 
+    <div
       onTouchStart={handleTouchStart} 
       onTouchMove={handleTouchMove}
-      style={{ width: '300px', height: '200px', border: '1px solid black', textAlign: 'center', lineHeight: '200px' }}
+      style={{ width: '100%', height: '100vh', position:'absolute' ,textAlign: 'center', top: '0px'}}
     >
-     {months[currentDate.month]}{ currentDate.year }
+      <div className='month-year-bcg text-center' style={{marginTop: '48px'}}>
+        <p className='month-year'>{months[currentDate.month]}{ currentDate.year }</p>
+      </div>
     </div>
   );
 };
