@@ -14,24 +14,28 @@ const SwipeCalendar = () => {
   
   // 用於跟踪是否已經更新過年份
   const yearUpdatedRef = useRef(false);
+  const swipeHandledRef = useRef(false);
 
   const handleTouchStart = (e) => {
     setStartX(e.touches[0].clientX);
-    yearUpdatedRef.current = false; // 重置年份更新標誌
+    yearUpdatedRef.current = false;
+    swipeHandledRef.current = false // 重置年份更新標誌
   };
 
   const handleTouchMove = (e) => {
     const moveX = e.touches[0].clientX;
 
-    if (startX - moveX > 80) {
+    if (startX - moveX > 80 && !swipeHandledRef.current) {
         // 向左滑動（下一個月）
+        swipeHandledRef.current = true
         setCurrentDate(({ year, month }) => {
           const newMonth = (month + 1) % 12;
           const newYear = newMonth === 0 ? year + 1 : year;
           return { year: newYear, month: newMonth };
         });
-      } else if (moveX - startX > 80) {
+      } else if (moveX - startX > 80 && !swipeHandledRef.current) {
         // 向右滑動（上一個月）
+        swipeHandledRef.current = true
         setCurrentDate(({ year, month }) => {
           const newMonth = (month - 1 + 12) % 12;
           const newYear = newMonth === 11 ? year - 1 : year;
