@@ -5,16 +5,18 @@ import About from './pages/About';
 import NotFound from './pages/NotFound';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import HomeContent from './components/homeContent';
 
 const App = () => {
   return (
     <Router>
       <Header />
-      <Routes>
+      {/* <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="*" element={<NotFound />} />
-      </Routes>
+      </Routes> */}
+      <HomeContent />
       {/* <Footer /> */}
     </Router>
   );
