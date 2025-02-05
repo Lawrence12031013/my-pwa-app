@@ -39,7 +39,7 @@ export const MoodContent = () => {
       const handleTouchMove = (e) => {
         const moveX = e.touches[0].clientX;
     
-        if (moveX - startX > 50 && !swipeHandledRef.current) {
+        if ( startX - moveX > 50 && !swipeHandledRef.current) {
             // 向左滑動（下一個月）
             swipeHandledRef.current = true
             setCurrentDate(({ year, month }) => {
@@ -47,7 +47,7 @@ export const MoodContent = () => {
               const newYear = newMonth === 0 ? year + 1 : year;
               return { year: newYear, month: newMonth };
             });
-          } else if ( startX - moveX > 50 && !swipeHandledRef.current) {
+          } else if ( moveX - startX > 50 && !swipeHandledRef.current) {
             // 向右滑動（上一個月）
             swipeHandledRef.current = true
             setCurrentDate(({ year, month }) => {
