@@ -1,0 +1,11 @@
+.footer-button {
+    height: 40px;
+    position: fixed;
+    bottom: 0;
+    border-top: 1px solid #ccc;
+}
+
+.footer-button i {
+    color:#3399DB;
+    font-size: 25px;
+}
