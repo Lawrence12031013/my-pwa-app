@@ -4,6 +4,7 @@ import mood_2 from '../assets/images/mood-2.png'
 import mood_3 from '../assets/images/mood-3.png'
 import mood_4 from '../assets/images/mood-4.png'
 import mood_5 from '../assets/images/mood-5.png'
+import Detail from './detail'
 
 
 export const MoodContent = () => {
@@ -32,6 +33,9 @@ export const MoodContent = () => {
     const [startX, setStartX] = useState(0);
     const [currentDate, setCurrentDate] = useState({ year: new Date().getFullYear(), month: new Date().getMonth() }); // 預設為當天
     const [data, setData] = useState(alldata.filter((getdata) => getdata.month === new Date().getMonth()));
+    const [detaiPage, setDetailPage] = useState(false)
+    const [toDetailPage, setToDetailPage] = useState()
+    const [message, setMessage] = useState("");
     
     // 用於跟踪是否已經更新過年份
     const yearUpdatedRef = useRef(false);
@@ -74,6 +78,17 @@ export const MoodContent = () => {
       const handleTouchEnd = () => {
         swipeHandledRef.current = false; // 允許下一次滑動
       };
+
+      const openDetailPage = (e) => {
+        setDetailPage(true);
+        setToDetailPage(e);
+      };
+      
+      // 關閉詳細頁
+      const closeDetailPage = () => {
+        setDetailPage(false);
+        setToDetailPage(null);
+      };
       
     
   return (
@@ -96,7 +111,7 @@ export const MoodContent = () => {
                 {data.map( (content, index) => (
                     <ul>
                         <li>
-                            <div key={content.id} className='flex justify-around py-4 px-2 items-center' onClick={() => alert(1)}>
+                            <div key={content.id} className='flex justify-around py-4 px-2 items-center' onClick={() => openDetailPage(data[index])}>
                                 <div className='text-center date-content'>
                                     <p className='text-3xl font-bold month-year py-1 border-b-1'>{content.date}</p>
                                     <p className='text-xl month-year py-1'>{days[content.day]}</p>
@@ -123,6 +138,7 @@ export const MoodContent = () => {
         }
       </div>
         </div>
+        {detaiPage && toDetailPage && <Detail data={toDetailPage} onClose={closeDetailPage} />}
     </>
   )
 }

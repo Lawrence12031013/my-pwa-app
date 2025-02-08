@@ -1,7 +1,35 @@
 .detail-content {
     background: #fff;
-    height: 100vh;
+    height: calc( 100vh - 47px );
     width: 100%;
     position: absolute;
-    top: 0;
+    top: 47px;
+    z-index: 9999;
+}
+
+.detail-textarea {
+    width: 90%;
+    height: 75vh;
+    padding: 0.5rem;
+    border:1px solid #000;
+    margin-top: 0.8rem;
+    border-radius: 5px;
+}
+
+.edit {
+    padding: 0.2rem 2rem;
+    background-color: red;
+    color: #fff;
+    border-radius: 5px;
+}
+
+.confirm {
+    padding: 0.2rem 2rem;
+    background-color: #3399DB;
+    color: #fff;
+    border-radius: 5px;
+}
+
+.detail-mood {
+    width: 12%;
 }
