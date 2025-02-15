@@ -1,5 +1,10 @@
 import React, { useState } from "react";
 import '../assets/styles/detail.css'
+import mood_1 from '../assets/images/mood-1.png'
+import mood_2 from '../assets/images/mood-2.png'
+import mood_3 from '../assets/images/mood-3.png'
+import mood_4 from '../assets/images/mood-4.png'
+import mood_5 from '../assets/images/mood-5.png'
 
 interface DetailProps {
   data: {
@@ -36,7 +41,16 @@ const Detail: React.FC<DetailProps> = ({ data, onClose }) => {
       <textarea className="detail-textarea" defaultValue={data.content} readOnly={ !edit }></textarea>
       <div className="flex items-center justify-center mt-2">
         <span>今日心情：</span>
-        <img className="px-2 detail-mood" src={moods[data.mood]} alt="mood-icon" />
+        <img className={`px-2 detail-mood ${data.mood === 0 ? 'checked' : ''}`}  src={mood_1} alt="bad" />
+        <input id="mood" name="mood" type="radio" value={data.mood} checked={ data.mood === 0 } />
+        <img className={`px-2 detail-mood ${data.mood === 1 ? 'checked' : ''}`}  src={mood_2} alt="not good" />
+        <input id="mood" name="mood" type="radio" value={data.mood} checked={ data.mood === 1 } />
+        <img className={`px-2 detail-mood ${data.mood === 2 ? 'checked' : ''}`}  src={mood_3} alt="normal" />
+        <input id="mood" name="mood" type="radio" value={data.mood} checked={ data.mood === 2 } />
+        <img className={`px-2 detail-mood ${data.mood === 3 ? 'checked' : ''}`}  src={mood_4} alt="not bad" />
+        <input id="mood" name="mood" type="radio" value={data.mood} checked={ data.mood === 3 } />
+        <img className={`px-2 detail-mood ${data.mood === 4 ? 'checked' : ''}`}  src={mood_5} alt="happpy" />
+        <input id="mood" name="mood" type="radio" value={data.mood} checked={ data.mood === 4 } />
       </div>
       <div className="flex justify-evenly mt-3">
         <button className={ !edit ? 'edit' : 'confirm'} onClick={() => editcontent()}>{ !edit ? '編輯' : '確定'}</button>

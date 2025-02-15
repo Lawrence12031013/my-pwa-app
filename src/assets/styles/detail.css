@@ -33,3 +33,15 @@
 .detail-mood {
     width: 12%;
 }
+
+input[type=radio] {
+    display: none;
+}
+
+.checked {
+    border-radius: 50%;
+    padding: 0.3rem;
+    background-color: #d2d2d1;
+    opacity: 0.6;
+    border: 3px solid #aaa;
+}
