@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/my-pwa-app/static/css/main.d2a93501.css",
-    "main.js": "/my-pwa-app/static/js/main.303c7cc5.js",
+    "main.css": "/my-pwa-app/static/css/main.29b20f86.css",
+    "main.js": "/my-pwa-app/static/js/main.f5a469cd.js",
     "static/js/488.52209b30.chunk.js": "/my-pwa-app/static/js/488.52209b30.chunk.js",
     "service-worker.js": "/my-pwa-app/service-worker.js",
     "index.html": "/my-pwa-app/index.html",
-    "main.d2a93501.css.map": "/my-pwa-app/static/css/main.d2a93501.css.map",
-    "main.303c7cc5.js.map": "/my-pwa-app/static/js/main.303c7cc5.js.map",
+    "main.29b20f86.css.map": "/my-pwa-app/static/css/main.29b20f86.css.map",
+    "main.f5a469cd.js.map": "/my-pwa-app/static/js/main.f5a469cd.js.map",
     "488.52209b30.chunk.js.map": "/my-pwa-app/static/js/488.52209b30.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.d2a93501.css",
-    "static/js/main.303c7cc5.js"
+    "static/css/main.29b20f86.css",
+    "static/js/main.f5a469cd.js"
   ]
 }
